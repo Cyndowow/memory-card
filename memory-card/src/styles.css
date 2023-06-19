@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border-radius: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+img {
+    padding: 0.5rem;
+}
+
+.name {
+    padding: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-self: center;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
