@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 import {capitalizeFirst, shuffleArray} from "./utils";
-import { click } from "@testing-library/user-event/dist/click";
+import "./styles.css";
 
 
 function App() {
@@ -21,19 +21,18 @@ function App() {
     loadCards()
   }, [])
 
-  const fetchVillagers = async (amount) => {
+  async function fetchVillagers(amount) {
     const villagers = [];
 
     for (let i = 1; i <= amount; i++) {
       const VillagerURL =`https://acnhapi.com/v1/villagers/${i}`
       const response = await fetch(VillagerURL);
-      const villager = response.json();
+      const villager = await response.json();
       const id = villager.id;
-      const name = capitalizeFirst(villager.name.name-USen)
+      const name = villager.name["name-USen"]//capitalizeFirst(villager.name)
       const image = villager.image_uri;
       villagers.push({id, name, image}) 
     }
-
     return villagers;
   }
 

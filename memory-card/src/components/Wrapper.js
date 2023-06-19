@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import Card from "./Card";
 
 export default function Wrapper({villagers, onCardClick}) {
